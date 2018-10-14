@@ -31,5 +31,9 @@ int main(int argc, char* argv[]) {
 	p_z.reset();		// unique_ptr implicitly calls delete for this unused memory
 	assert(!p_z);		// verifies that p_z is no longer in use
 
+	// what happens when we try to access memory through p_x after it is reset?
+	// *p_x = 10;
+	// cout << *p_x << endl;
+
 	return 0;
 }

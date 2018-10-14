@@ -4,6 +4,7 @@
 using std::cout;
 using std::endl;
 using std::shared_ptr;
+using std::weak_ptr;
 
 // adopted from Pitt-Francis & Whiteley 2nd Ed., Listing 4.3
 int main(int argc, char* argv[]) {
@@ -15,9 +16,9 @@ int main(int argc, char* argv[]) {
 	// the use_count() method tells hom many pointers exist to this memory
 	cout << "p_x use count:  " << p_x.use_count() << endl << endl;
 
-	// a shared_ptr can be directly copied, unlike a unique_ptr object
-	shared_ptr<int> p_y = p_x;
-	cout << "Assign p_y = p_x" << endl;
+	// a weak_ptr can be initialized from a shared_ptr
+	weak_ptr<int> p_y(p_x);
+	cout << "Initialize p_y(p_x)" << endl;
 	cout << "p_x use count:  " << p_x.use_count() << endl;
 	cout << "p_y use count:  " << p_y.use_count() << endl << endl;
 
