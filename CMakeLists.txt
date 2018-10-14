@@ -15,11 +15,5 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wall")
 
 # create the executable
 #include_directories(src lib)
-add_executable(ex11
-	src/main.cpp
-	#lib/dnaFindPattern.hpp
-	#lib/dnaFindPattern.cpp
-)
-#target_include_directories(ex11 PUBLIC lib)
-#target_link_libraries(ex11 dnaregex)
-
+add_executable(ex11p1 src/main1.cpp)
+add_executable(ex11p2 src/main2.cpp)
